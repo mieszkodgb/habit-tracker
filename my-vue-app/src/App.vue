@@ -1,24 +1,16 @@
-<script setup lang="ts">
-import { Button } from '@/components/ui/button'
-</script>
-
+<!-- src/App.vue -->
 <template>
-  <div>
-    <Button>Click me</Button>
+  <div class="min-h-screen bg-background">
+    <Navbar />
+    <main class="container mx-auto px-4 py-8">
+      <RouterView />
+    </main>
+    <ToastProvider />
   </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script setup lang="ts">
+import { RouterView } from 'vue-router'
+import Navbar from '@/components/layout/Navbar.vue'
+import ToastProvider from '@/components/common/ToastProvider.vue'
+</script>

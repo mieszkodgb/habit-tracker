@@ -23,7 +23,7 @@
               v-for="habit in dailyHabits" 
               :key="habit.id" 
               :habit="habit"
-              @toggle="toggleHabit"
+              @toggle-completion="toggleHabit"
             />
           </div>
         </TabsContent>
@@ -33,7 +33,7 @@
               v-for="habit in weeklyHabits" 
               :key="habit.id" 
               :habit="habit"
-              @toggle="toggleHabit"
+              @toggle-completion="toggleHabit"
             />
           </div>
         </TabsContent>
@@ -121,6 +121,7 @@
   }
   
   const toggleHabit = (habitId: string) => {
+    console.log("Toggle habit");
     habitStore.toggleCompletion(habitId)
   }
   </script>

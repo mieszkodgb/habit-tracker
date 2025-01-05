@@ -19,13 +19,8 @@ const router = createRouter({
     },
     {
       path: '/habits',
-      component: () => import('@/pages/HabitsPage.vue'),
-      meta: { requiresAuth: true }
-    },
-    {
-      path: '/dashboard',
       component: () => import('@/pages/HabitDashboard.vue'),
-      meta: { requiresAuth: false }
+      meta: { requiresAuth: true }
     }
 
   ]

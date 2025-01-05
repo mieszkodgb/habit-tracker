@@ -1,6 +1,6 @@
 <!-- src/pages/HabitDashboard.vue -->
 <template>
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <div class="flex justify-between items-center mb-8">
         <div>
           <h1 class="text-3xl font-bold">My Habits</h1>
@@ -11,12 +11,14 @@
           Add Habit
         </Button>
       </div>
+      <HabitStats class="mb-8" />
   
       <Tabs default-value="daily" class="mb-8">
         <TabsList>
           <TabsTrigger value="daily">Daily Habits</TabsTrigger>
           <TabsTrigger value="weekly">Weekly Habits</TabsTrigger>
         </TabsList>
+
         <TabsContent value="daily">
           <div class="grid gap-4">
             <HabitCard 
@@ -38,6 +40,10 @@
           </div>
         </TabsContent>
       </Tabs>
+      <!-- <HabitStreakCalendar 
+      :habits="habitStore.habits"
+      @toggle="toggleHabit"
+      /> -->
     </div>
   
     <Dialog v-model:open="showNewHabitDialog">
@@ -97,6 +103,8 @@
   import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs'
   import { useHabitStore } from '@/stores/habitStore'
   import HabitCard from '@/components/habits/HabitCard.vue'
+  import HabitStats from '@/components/habits/HabitStats.vue'
+  import HabitStreakCalendar from '@/components/habits/HabitStreakCalendar.vue'
   
   const habitStore = useHabitStore()
   const showNewHabitDialog = ref(false)

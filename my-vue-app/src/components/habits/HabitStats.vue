@@ -87,7 +87,7 @@
   })
   
   const longestStreak = computed(() => 
-    Math.max(...habitStore.habits.map(h => h.streak))
+    Math.max(...habitStore.habits.map(h => h.streak), 0)
   )
   
   const currentStreak = computed(() => 

@@ -10,6 +10,8 @@ export interface Habit {
     completedDates: string[]  // ISO date strings
     createdAt: string
     streak: number
+    longestStreak: number
+    lastChecked?: string
     // New fields
     priority?: HabitPriority
     icon?: HabitIcon

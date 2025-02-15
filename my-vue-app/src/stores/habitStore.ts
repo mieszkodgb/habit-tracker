@@ -1,18 +1,7 @@
 // src/stores/habitStore.ts
 import { defineStore } from 'pinia'
 import { useNotificationStore } from './notificationStore'
-
-export interface Habit {
-  id: string
-  title: string
-  description?: string
-  frequency: 'daily' | 'weekly'
-  completedDates: string[] // ISO date strings
-  createdAt: string
-  streak: number
-  longestStreak: number
-  lastChecked?: string
-}
+import type { Habit} from '@/features/habits/types/habit'
 
 // Helper functions
 function isSameDay(date1: Date, date2: Date): boolean {
@@ -87,7 +76,9 @@ export const useHabitStore = defineStore('habits', {
           completedDates: [],
           streak: 0,
           longestStreak: 0,
-          lastChecked: new Date().toISOString()
+          lastChecked: new Date().toISOString(),
+          priority: 'low',
+          icon: 'Dumbbell'
         }
 
         this.habits.push(newHabit)

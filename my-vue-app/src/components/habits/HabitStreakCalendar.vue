@@ -131,12 +131,12 @@
     HoverCardContent,
     HoverCardTrigger,
   } from '@/components/ui/hover-card'
-  import type { Habit } from '@/stores/habitStore'
-  
+  import type { Habit} from '@/features/habits/types/habit'
+
   const props = defineProps<{
     habits: Habit[]
   }>()
-  
+
   const emit = defineEmits<{
     (e: 'toggle-completion', payload: { habitId: string, date: string }): void
   }>()

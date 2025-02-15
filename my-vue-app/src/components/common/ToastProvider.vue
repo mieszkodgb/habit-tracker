@@ -31,8 +31,6 @@
   const notificationStore = useNotificationStore()
   const notifications = computed(() => notificationStore.notifications)
   
-  const getPositionClass = 'fixed top-4 right-4'
-  
   const getIcon = (type: NotificationType) => {
     switch (type) {
       case 'success':

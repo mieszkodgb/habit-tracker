@@ -142,7 +142,7 @@ const icons = {
   Trophy,
 }
 
-const props = defineProps<{
+defineProps<{
   open: boolean
 }>()
 
